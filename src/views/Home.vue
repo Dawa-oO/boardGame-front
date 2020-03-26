@@ -1,13 +1,149 @@
 <template>
   <div class="home">
-    <h1>This is the home page</h1>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img :src="row1.images_url[0].image_url" class="card-img-top image" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">{{row1.label}}</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img :src="row2.images_url[0].image_url" class="card-img-top image" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">{{row2.label}}</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow to-bottom full-height">
+            <div class="card-body text-center to-inherit">
+              <h1 class="card-title mb-0">{{row3.label2}}</h1>
+            </div>
+            <div class="card-body text-center to-bottom">
+              <h5 class="card-title mb-0">{{row3.label1}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img :src="row4.images_url[0].image_url" class="card-img-top image" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">{{row4.label}}</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img :src="row4.images_url[1].image_url" class="card-img-top image" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">{{row4.label}}</h5>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-xl-4 col-md-6 mb-4">
+          <div class="card border-0 shadow">
+            <img :src="row4.images_url[2].image_url" class="card-img-top image" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title mb-0">{{row4.label}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
   </div>
 </template>
 
 
 <script>
-
-export default {
-  name: 'Home'
-}
+  export default {
+    name: 'Home',
+    data() {
+      return {
+        row1 : {
+          label: "",
+          images_url: []
+        },
+        row2: {
+          label: "",
+          images_url: []
+        },
+        row3 : {
+          label1 : "",
+          label2 : 0
+        },
+        row4: {
+          label: "",
+          images_url: []
+        }
+      }
+    },
+    created() {
+      // MOCK row 1
+      this.row1.label = "Top jeu";
+      this.row1.images_url =
+              [{
+                id: 1,
+                image_url: "http://localhost:1991/images/games/8.jpg"
+              }];
+      // MOCK row 2
+      this.row2.label = "Top joueur";
+      this.row2.images_url =
+              [{
+                id: 1,
+                image_url: "http://localhost:1991/images/players/3.jpg"
+              }];
+      // MOCK row 3
+      this.row3.label1 = "Total parties jouées";
+      this.row3.label2 = 12345;
+      // MOCK row 4
+      this.row4.label = "Derniers jeux joués";
+      this.row4.images_url =
+              [{id: 1,image_url: "http://localhost:1991/images/games/8.jpg"},
+        {id: 2, image_url: "http://localhost:1991/images/games/8.jpg"},
+        {id: 3, image_url: "http://localhost:1991/images/games/8.jpg"}];
+    }
+  }
 </script>
+
+<style scoped>
+  .home {
+    text-align: left;
+    margin-top: 5%;
+  }
+  .image {
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+  .to-inherit {
+    height: inherit;
+  }
+  .full-height {
+    height: 100%;
+  }
+  .full-height h1 {
+    margin-top: 40%;
+  }
+  .card {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+</style>
