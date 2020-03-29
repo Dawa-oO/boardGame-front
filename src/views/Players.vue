@@ -1,18 +1,13 @@
 <template>
   <div class="players">
-
     <div v-if="loading" class="loading">
       Loading...
     </div>
-    <div class="container">
-      <div class="row">
-        <carousel :per-page="3" :mouse-drag="false" v-if="!loading">
-          <slide v-bind:key="player.id" v-for="player in players">
-            <CardPlayer v-bind:player="player" />
-          </slide>
-        </carousel>
-      </div>
-    </div>
+    <carousel :paginationPosition="top" :per-page="4" :mouse-drag="false" v-if="!loading" :autoplay="false" :loop="true" :autoplayTimeout="3000" >
+      <slide v-bind:key="player.id" v-for="player in players">
+        <CardPlayer v-bind:player="player" />
+      </slide>
+    </carousel>
   </div>
 </template>
 
@@ -61,10 +56,6 @@
 </script>
 
 <style scoped>
-  .players {
-    margin-top: 5%;
-  }
-
 
 </style>
 

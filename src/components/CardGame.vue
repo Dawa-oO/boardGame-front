@@ -1,5 +1,5 @@
 <template>
-    <div class="cardPlayer">
+    <div class="cardGame">
         <img :src="image_url" class="card-img-top image" alt="...">
         <div>
             <h5>{{game.name}}</h5>
