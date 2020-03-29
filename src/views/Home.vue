@@ -107,6 +107,6 @@
 <style scoped>
   .home {
     text-align: left;
-    margin-top: 5%;
+    margin-top: 1.5%;
   }
 </style>
