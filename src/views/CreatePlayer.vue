@@ -10,15 +10,15 @@
             </p>
             <div class="form-group">
                 <label for="image">Avatar</label>
-                <input type="file" class="form-control-file" id="image" name="image" ref="image">
+                <input type="file" class="form-control-file" id="image" name="image" ref="image" required>
             </div>
             <div class="form-group">
                 <label for="pseudo">Pseudo</label>
-                <input type="text" class="form-control" id="pseudo" v-model="pseudo" name="pseudo">
+                <input type="text" class="form-control" id="pseudo" v-model="pseudo" name="pseudo" required>
             </div>
             <div class="form-group">
                 <label for="firstName">Prénom</label>
-                <input type="text" class="form-control" id="firstName" v-model="firstName" name="firstName">
+                <input type="text" class="form-control" id="firstName" v-model="firstName" name="firstName" required>
             </div>
             <button type="submit" class="btn btn-primary">Créer</button>
         </form>
