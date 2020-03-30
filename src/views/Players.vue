@@ -3,7 +3,7 @@
     <div v-if="loading" class="loading">
       Loading...
     </div>
-    <carousel :paginationPosition="top" :per-page="4" :mouse-drag="false" v-if="!loading" :autoplay="true" :loop="true" :autoplayTimeout="3000" >
+    <carousel :per-page="4" :mouse-drag="false" v-if="!loading" :autoplay="true" :loop="true" :autoplayTimeout="3000" >
       <slide v-bind:key="player.id" v-for="player in players">
         <CardPlayer v-bind:player="player" />
       </slide>
